@@ -15,3 +15,18 @@ const countryList = [
   "Autria",
   "Azerbaïjan"
 ];
+
+// function autocomp (inp, array) {
+//   input.addEventListener("input", function(e) {
+//     var a, b, i, val = this.value
+//   })
+//   for (i=0; i<countryList.length; i++) {
+//     document.createElement("")
+//   }
+// }
+
+
+
+function autocomp () {
+  let inputField = document.getElementById("country")
+}

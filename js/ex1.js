@@ -33,3 +33,51 @@ const getCharacters = houseCode => {
       return []; // Empty array
   }
 };
+
+// console.log(getCharacters("LA"));
+
+// Append dropdown values
+for (i=0; i<houses.length; i++) {
+  const names = document.createElement("option")
+  names.value = houses[i].code;
+  names.textContent = houses[i].name;
+  document.getElementById("house").appendChild(names);
+}
+
+// Test values just append
+document.getElementById("house").addEventListener("change", e => {
+  console.log("House code: " + e.target.value);
+});
+
+
+// Get dropdown values    -->   ['ST', 'LA', 'BA', 'TA']
+let houseElements = [];
+function getCode (arr, field) {
+  for (i=0; i<houses.length; i++) {
+    houseElements.push(arr[i][field]);
+  }
+  return houseElements;
+}
+console.log(getCode(houses, "code"));
+
+
+// for (x=0; x<houseElements.length; x++) {
+//   if (document.getElementById("house") === houseElements[x]) {
+//     getCharacters(`${houseElements[x]}`);
+//   }
+// }
+
+
+
+
+// document.getElementById("house").addEventListener("click", e => {
+// });
+
+
+
+
+const formElement = document.querySelector("form");
+
+formElement.addEventListener("submit", e => {
+  e.preventDefault();
+})
