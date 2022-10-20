@@ -34,7 +34,6 @@ const getCharacters = houseCode => {
   }
 };
 
-// console.log(getCharacters("LA"));
 
 // Append dropdown values
 for (i=0; i<houses.length; i++) {
@@ -45,9 +44,9 @@ for (i=0; i<houses.length; i++) {
 }
 
 // Test values just append
-document.getElementById("house").addEventListener("change", e => {
-  console.log("House code: " + e.target.value);
-});
+// document.getElementById("house").addEventListener("change", e => {
+//   console.log("House code: " + e.target.value);
+// });
 
 
 // Get dropdown values    -->   ['ST', 'LA', 'BA', 'TA']
@@ -58,26 +57,15 @@ function getCode (arr, field) {
   }
   return houseElements;
 }
-console.log(getCode(houses, "code"));
-
-
-// for (x=0; x<houseElements.length; x++) {
-//   if (document.getElementById("house") === houseElements[x]) {
-//     getCharacters(`${houseElements[x]}`);
-//   }
-// }
-
-
-
-
-// document.getElementById("house").addEventListener("click", e => {
-// });
-
-
 
 
 const formElement = document.querySelector("form");
 
-formElement.addEventListener("submit", e => {
+formElement.addEventListener("change", e => {
   e.preventDefault();
-})
+  getCharacters(e.target.value).forEach(element => {
+    const liElem = document.createElement("li");
+    liElem.textContent = element;
+    document.getElementById("characters").appendChild(liElem);
+  });
+});
