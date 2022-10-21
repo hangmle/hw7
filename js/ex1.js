@@ -43,10 +43,10 @@ for (i=0; i<houses.length; i++) {
   document.getElementById("house").appendChild(names);
 }
 
-// Test values just append
-// document.getElementById("house").addEventListener("change", e => {
-//   console.log("House code: " + e.target.value);
-// });
+// Test values just appended
+document.getElementById("house").addEventListener("change", e => {
+  console.log("House code: " + e.target.value);
+});
 
 
 // Get dropdown values    -->   ['ST', 'LA', 'BA', 'TA']
@@ -63,6 +63,7 @@ const formElement = document.querySelector("form");
 
 formElement.addEventListener("change", e => {
   e.preventDefault();
+  console.log(`House characters: ${getCharacters(e.target.value)}`);
   getCharacters(e.target.value).forEach(element => {
     const liElem = document.createElement("li");
     liElem.textContent = element;
