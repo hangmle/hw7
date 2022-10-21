@@ -70,3 +70,4 @@ formElement.addEventListener("change", e => {
     document.getElementById("characters").appendChild(liElem);
   });
 });
+
